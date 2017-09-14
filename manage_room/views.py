@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 from haikunator import Haikunator
 
-from .models import Room, Slide
+from .models import Room, Slide, Coworker
 from manage_chat.views import get_chat_list, get_notice_list, get_poll_list
 
 
@@ -81,6 +81,11 @@ def markdown_to_pdf_view(request, label):
 
 @login_required
 def coworker_manage_view(request):
+    if request.method == 'POST':
+        room = Room.objects.get(title=request.POST['title'])
+        user = User.objects.get(email=request.POST['email'])
+        Coworker.objects.create(room=room, user=user)
+        return render(request, 'manage.html')
     return render(request, 'manage.html')
 
 
