@@ -78,12 +78,12 @@
           {% load account %}
           <a class="nav-link dropdown-toggle" href="#" id="logged_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">Welcome, <b>{% user_display user %}</b></a>
           <div class="dropdown-menu" aria-labelledby="logged_dropdown">
+            <a class="dropdown-item" href="{% url 'manage' %}">Manage</a>
             <a class="dropdown-item" href="#" onclick="withdrawAccountModal()">Withdraw</a>
             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
           </div>
         </li>
       </ul>
-
     </nav>
 
     <div class="list-group center-list">

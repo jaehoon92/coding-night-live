@@ -80,3 +80,11 @@ class Slide(models.Model):
         self.websocket_group.send({
             "text": json.dumps(final_msg)
         })
+
+
+class Coworker(models.Model):
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.room.title)

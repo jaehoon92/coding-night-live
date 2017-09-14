@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^$', MainView.as_view(), name='main'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include(custom_conf)),
+    url(r'^services/manage/$', manage_room.views.coworker_manage_view, name='manage'),
     url(r'^services/$', manage_room.views.room_list_view, name='services'),
     url(r'^services/new/', manage_room.views.room_create_view, name='new'),
     url(

@@ -79,6 +79,11 @@ def markdown_to_pdf_view(request, label):
         return HttpResponse('<h1>' + label + ' room does not exist!</h1>')
 
 
+@login_required
+def coworker_manage_view(request):
+    return render(request, 'maange.html')
+
+
 class RedirectRoomView(TemplateView):
     template_name = 'room.html'
 
