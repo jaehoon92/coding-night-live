@@ -81,7 +81,7 @@ def markdown_to_pdf_view(request, label):
 
 @login_required
 def coworker_manage_view(request):
-    return render(request, 'maange.html')
+    return render(request, 'manage.html')
 
 
 class RedirectRoomView(TemplateView):
